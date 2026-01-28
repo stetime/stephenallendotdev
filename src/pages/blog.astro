@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content"
+import Layout from "../layouts/Layout.astro"
+
+const posts = await getCollection("posts")
+const title = "blog"
+---
+
+<Layout title={title}>
+  <div class="prose prose-invert mx-auto max-w-3xl">
+  <ul>
+    {posts.map((post) => (<li class="flex justify-between items-center"><a href={`/posts/${post.id}`}>{post.data.title}</a><span class="font-mono text-sm text-gray-700">{post.data.pubDate}</span></li>))}
+  </ul>
+  </div>
+
+</Layout>

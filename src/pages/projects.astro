@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro"
+import ProjectCard from "../components/ProjectCard.astro"
+import data from "../progs.json"
+---
+
+<Layout title="about">
+  <div class="text-white mx-auto">
+    <h1 class="font-bold text-3xl">Projects</h1>
+  </div>
+  <div class="text-white">
+    {data.map((item) => (<ProjectCard {...item} />))}
+  </div>
+</Layout>

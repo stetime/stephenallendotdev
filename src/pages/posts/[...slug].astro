@@ -14,9 +14,10 @@ const { Content } = await render(post);
 ---
 
 
-<Layout title={post.data.title}>
+<Layout title={Astro.site}>
   <article class="prose prose-slate dark:prose-invert mx-auto">
-    <h1>{post.data.title}</h1>
+    <h2 class="">{post.data.title}</h2>
+    <p class="font-mono my-0 mx-0">{post.data.pubDate}</p>
   <Content />
 
   </article>

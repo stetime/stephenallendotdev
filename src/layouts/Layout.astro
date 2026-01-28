@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css"
+import Header from "../components/Header.astro"
 const { title, description } = Astro.props
 const url = new URL(Astro.url, Astro.site)
 ---
@@ -21,8 +22,9 @@ const url = new URL(Astro.url, Astro.site)
     />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-white dark:bg-gray-800">
-    <div class="max-w-3xl mx-auto px-6 py-12">
+  <body class="bg-(--background-light) dark:bg-(--background) px-6 py-6">
+    <Header />
+    <div class="max-w-3xl mx-auto">
       <slot />
     </div>
   </body>

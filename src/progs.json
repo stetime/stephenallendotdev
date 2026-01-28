@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Feedin",
+    "tech": ["Typescript", "bun", "sqlite", "hono", "react"],
+    "description": "Opinionated & minimalist RSS/ATOM feed reader API and web based front end."
+  },
+  {
+    "title": "Last.fm Collage generator",
+    "tech": ["Typescript", "nodejs", "express"],
+    "description": "Open source Typescript alternative to tapmusic's last.fm collage generator."
+  },
+  {
+    "title": "RSSBot",
+    "tech": ["Typescript", "nodejs", "sqlite", "discord.js"],
+    "description": "Discord bot built in conjunction with Feedin. A hobby project I've rebuilt several times to experiment with different technologies and design principles. Fetches RSS/ATOM feeds and provides servers with smoother integration for services including Reddit & X."
+  },
+  {
+    "title": "stephenallen.dev",
+    "tech": ["Typescript", "Astro", "Tailwind", "sqlite"],
+    "description": "This website. Built with Astro"
+  }
+]

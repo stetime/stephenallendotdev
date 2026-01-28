@@ -10,7 +10,7 @@ export default defineConfig({
   },
   markdown: {
     shikiConfig: {
-      theme: "houston"
+      theme: "github-dark"
     }
   },
   server: {
