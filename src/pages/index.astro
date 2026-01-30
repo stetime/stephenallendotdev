@@ -1,8 +1,164 @@
 ---
-import Layout from "../layouts/Layout.astro"
-const title = "Stephen Allen"
 ---
-<Layout title={title}>
-		<h1 class="text-8xl">Test</h1>
-</Layout>
+<style>
+	body {
+  background-color: #fff;
+  font-family: -apple-system, 'Segoe UI', system-ui, Roboto, Ubuntu,
+    'Helvetica Neue', Oxygen, Cantarell, Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-weight: 400;
+}
 
+h1 {
+  color: #000;
+  font-weight: 700px;
+  font-size: 4.7vw;
+  line-height: 1;
+  padding-left: 35px;
+  margin-top: 200px;
+  padding-right: 15px;
+  letter-spacing: -1px;
+  margin-bottom: 2px;
+  opacity: 1;
+}
+
+h2 {
+  font-size: 2vw;
+  line-height: 1.25;
+  font-weight: 400;
+  padding-left: 35px;
+  padding-right: 60px;
+  letter-spacing: -1px;
+  margin: 0px;
+}
+
+a {
+  color: rgba(39, 39, 39, 1);
+  font-weight: 700;
+  padding-bottom: 3px;
+  text-decoration: none;
+  opacity: 1;
+}
+
+h2 a {
+  font-weight: 400;
+}
+
+section#main {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+div#panel {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 760px){
+  h1 {
+    font-weight: 700;
+    font-size: 7vw;
+    line-height: 1;
+    padding-left: 30px;
+    margin-top: 150px;
+  }
+  h2 {
+    font-size: 5vw;
+    padding-left: 30px;
+  }
+  img.bomb {
+    padding-left: 30px;
+  }
+  p#ready {
+    font-size: 14px;
+    left: 30px;
+  }
+}
+
+@media (min-width: 1300px){
+  h1 {
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 1;
+    padding-left: 30px;
+    margin-top: 50px;
+  }
+  h2 {
+    font-size: 28px;
+    padding-left: 30px;
+  }
+  img.bomb {
+    padding-left: 30px;
+  }
+  p#ready {
+    font-size: 14px;
+    left: 30px;
+  }
+}
+
+@media (max-height: 414px){
+  h1 {
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 1;
+    padding-left: 30px;
+    margin-top: 100px;
+  }
+  h2 {
+    font-size: 25px;
+    padding-left: 30px;
+  }
+  img.bomb {
+    margin-top: 50px;
+    padding-left: 25px;
+    height: 50px;
+    width: 50px;
+  }
+  p#ready {
+    font-size: 14px;
+    left: 30px;
+  }
+}
+
+@media (max-height: 214px){
+  h1 {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1;
+    padding-left: 30px;
+    margin-top: 60px;
+  }
+  h2 {
+    font-size: 20px;
+    padding-left: 30px;
+  }
+  img.bomb {
+    margin-top: 50px;
+    padding-left: 25px;
+    height: 50px;
+    width: 50px;
+  }
+  p#ready {
+    font-size: 14px;
+    left: 30px;
+    bottom: 10px;
+  }
+}
+</style>
+
+  <body>
+    <section id="main">
+      <div id="panel">
+        <h1>Stephen Allen</h1>
+        <h2><a href="#">Web Developer</a></h2>
+      </div>
+    </section>
