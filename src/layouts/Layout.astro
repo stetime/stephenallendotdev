@@ -1,8 +1,8 @@
 ---
-import "../styles/global.css"
-import Header from "../components/Header.astro"
-const { title, description } = Astro.props
-const url = new URL(Astro.url, Astro.site)
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+const { title, description } = Astro.props;
+const url = new URL(Astro.url, Astro.site);
 ---
 
 <!doctype html>
@@ -14,17 +14,18 @@ const url = new URL(Astro.url, Astro.site)
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={url} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={Astro.site} />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <meta name="theme-color" content="red" />
     <title>{title}</title>
   </head>
-  <body class="bg-(--background-light) dark:bg-(--background) px-6 py-6">
+  <body>
     <Header />
-    <div class="max-w-3xl mx-auto">
+    <div class="container">
       <slot />
     </div>
   </body>

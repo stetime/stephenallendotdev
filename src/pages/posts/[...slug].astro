@@ -1,11 +1,12 @@
 ---
-import { getCollection, render } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts');
-  return posts.map(post => ({
-    params: { slug: post.id }, props: { post },
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
   }));
 }
 
@@ -13,12 +14,37 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-
-<Layout title={Astro.site}>
-  <article class="prose prose-slate dark:prose-invert mx-auto">
-    <h2 class="">{post.data.title}</h2>
-    <p class="font-mono my-0 mx-0">{post.data.pubDate}</p>
-  <Content />
-
+<Layout title={`${post.data.title} - stephenallen.dev`}>
+  <article class="prose">
+    <h2>{post.data.title}</h2>
+    <span class="date">{post.data.pubDate}</span>
+    <Content />
   </article>
 </Layout>
+<script>
+  document.querySelectorAll("img").forEach((img) => {
+    img.addEventListener("click", () => {
+      const overlay = document.createElement("div");
+      overlay.style.cssText = `
+        position:fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: zoom-out;
+        z-index: 9999;
+      `;
+      const full = document.createElement("img");
+      full.src = img.src;
+      full.style.cssText = `
+        max-width:95vw;
+        max-height: 95vh;
+        object-fit: contain
+      `;
+      overlay.appendChild(full);
+      overlay.addEventListener("click", () => overlay.remove());
+      document.body.appendChild(overlay);
+    });
+  });
+</script>

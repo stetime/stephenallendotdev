@@ -1,22 +1,27 @@
 [
   {
     "title": "Feedin",
-    "tech": ["Typescript", "bun", "sqlite", "hono", "react"],
+    "tech": ["Typescript", "postgres", "hono", "react"],
     "description": "Opinionated & minimalist RSS/ATOM feed reader API and web based front end."
   },
   {
     "title": "Last.fm Collage generator",
-    "tech": ["Typescript", "nodejs", "express"],
+    "tech": ["Typescript", "hono"],
     "description": "Open source Typescript alternative to tapmusic's last.fm collage generator."
   },
   {
+    "title": "mednafen-chd",
+    "tech": ["C"],
+    "description": "Fork of the mednafen multi-system emulator with support for CHD disc images."
+  },
+  {
     "title": "RSSBot",
-    "tech": ["Typescript", "nodejs", "sqlite", "discord.js"],
+    "tech": ["Typescript", "sqlite", "discord.js"],
     "description": "Discord bot built in conjunction with Feedin. A hobby project I've rebuilt several times to experiment with different technologies and design principles. Fetches RSS/ATOM feeds and provides servers with smoother integration for services including Reddit & X."
   },
   {
     "title": "stephenallen.dev",
-    "tech": ["Typescript", "Astro", "Tailwind", "sqlite"],
-    "description": "This website. Built with Astro"
+    "tech": ["Typescript", "Astro"],
+    "description": "This website. Built with Astro and hosted by Cloudflare Workers"
   }
 ]

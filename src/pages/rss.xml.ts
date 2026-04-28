@@ -11,7 +11,7 @@ export const GET: APIRoute = async ({ site }) => {
     throw new Error("site is required in astro.config.ts for RSS generation")
   }
 
-  const posts = await getCollection("posts")
+  const posts = (await getCollection("posts")).sort((a, b) => (b.data.pubDate > a.data.pubDate ? 1 : -1))
 
   return rss({
     title: "test",
