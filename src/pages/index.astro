@@ -3,11 +3,10 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
 const posts = await getCollection("posts");
-const title = "blog";
 const sorted = posts.sort((a, b) => (b.data.pubDate > a.data.pubDate ? 1 : -1));
 ---
 
-<Layout title={title}>
+<Layout title={Astro.site}>
   <div class="prose">
     <h2>2026</h2>
     <ul class="postlist">
