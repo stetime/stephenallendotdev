@@ -14,8 +14,8 @@ export const GET: APIRoute = async ({ site }) => {
   const posts = (await getCollection("posts")).sort((a, b) => (b.data.pubDate > a.data.pubDate ? 1 : -1))
 
   return rss({
-    title: "test",
-    description: "test",
+    title: "Stephen Allen",
+    description: "Web developer, tinkerer and self hoster from Manchester, UK.",
     site,
     trailingSlash: false,
     items: posts.map((post) => ({
