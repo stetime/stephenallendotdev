@@ -9,8 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.15",
-    "astro": "^5.16.11",
+    "@astrojs/rss": "4.0.18",
+    "astro": "6.2.2",
     "markdown-it": "^14.1.0",
     "sanitize-html": "^2.17.0"
   },
