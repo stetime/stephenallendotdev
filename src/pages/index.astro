@@ -6,7 +6,7 @@ const posts = await getCollection("posts");
 const sorted = posts.sort((a, b) => (b.data.pubDate > a.data.pubDate ? 1 : -1));
 ---
 
-<Layout title={Astro.site}>
+<Layout title={Astro.site} description="Stephen Allen">
   <div class="prose">
     <h2>2026</h2>
     <ul class="postlist">
@@ -14,7 +14,7 @@ const sorted = posts.sort((a, b) => (b.data.pubDate > a.data.pubDate ? 1 : -1));
         sorted.map((post) => (
           <li class="postlistentry">
             <a href={`/posts/${post.id}`}>{post.data.title}</a>{" "}
-            <span class="date">{post.data.pubDate}</span>
+            <span class="date">{post.data.pubDate.toLocaleDateString()}</span>
           </li>
         ))
       }

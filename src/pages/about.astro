@@ -1,9 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import data from "../progs.json";
 ---
 
-<Layout title="About - stephenallen.dev">
+<Layout title="About - stephenallen.dev" description="About - stephenallen.dev">
   <div class="prose">
     <h2>About</h2>
     Web developer & systems admin from Manchester, UK. Passionate about open source,
@@ -11,7 +10,5 @@ import data from "../progs.json";
     website was built with <a href="https://www.astro.build">Astro</a> and is hosted
     on <a href="https://www.cloudflare.com">Cloudflare Workers</a>.
     <p>© 2026 Stephen Allen · Content CC BY 4.0 · Code MIT</p>
-    <!-- <h2>Selected Projects</h2>
-    {data.map((data) => <h3>{data.title}</h3>)} -->
   </div>
 </Layout>

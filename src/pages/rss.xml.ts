@@ -22,7 +22,7 @@ export const GET: APIRoute = async ({ site }) => {
       title: post.data.title,
       pubDate: new Date(post.data.pubDate),
       description: post.data.excerpt,
-      link: `/posts/${post.id}/`,
+      link: `/posts/${post.id}`,
       content: post.body && sanitizeHtml(parser.render(post.body), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
       }),

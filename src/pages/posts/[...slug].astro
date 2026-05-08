@@ -14,10 +14,13 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout title={`${post.data.title} - stephenallen.dev`}>
+<Layout
+  title={`${post.data.title} - stephenallen.dev`}
+  description={`${post.data.excerpt}`}
+>
   <article class="prose">
     <h2>{post.data.title}</h2>
-    <span class="date">{post.data.pubDate}</span>
+    <span class="date">{post.data.pubDate.toLocaleDateString()}</span>
     <Content />
   </article>
 </Layout>
