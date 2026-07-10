@@ -4,7 +4,7 @@ pubDate: "2026-07-08"
 excerpt: "Enter restic, a cross-platform tool that makes encrypted deduplicated backups."
 ---
 
-While migrating my Thinkpad from Arch to Fedora this past week, it hit me that despite having access to a server with a zfs array I'd really procrastinated on any kind of "backup strategy" for my workstations. Enter [`restic`](https://restic.net/), a cross-platform tool that makes encrypted deduplicated backups. It can be paired with `rclone` for backing up to pretty much any cloud storage provider but for now I'll stick with plain sftp over [Tailscale](https://tailscale.com/) which `restic` will manage just fine.
+While migrating my Thinkpad from Arch to Fedora this past week, it hit me that despite having access to a server with a zfs array I'd really procrastinated on any kind of "backup strategy" for my workstations. Enter [restic](https://restic.net/), a cross-platform tool that makes encrypted deduplicated backups. It can be paired with [rclone](https://rclone.org/) for backing up to pretty much any cloud storage provider but for now I'll stick with plain sftp over [Tailscale](https://tailscale.com/) which restic will manage just fine.
 
 Create a backups zfs dataset:
 
@@ -22,9 +22,7 @@ sudo chown restic:restic /backups
 sudo chmod 700 /backups
 ```
 
-I'm using Tailscale SSH for the transport rather than exposing SSH to the internet. If using regular SSH/SFTP, configure key-based authentication instead.
-
-Install Restic via your package manager:
+Install restic via your package manager:
 
 ```bash
 sudo dnf install restic
@@ -38,7 +36,7 @@ restic init \
   # if using ssh key login add: -o sftp.args="-i /path/to/key"
 ```
 
-This will prompt for a secure password. Remember to stick this in your password manager as this is required for a restore. 
+This will prompt for a secure password. Remember to stick this in your password manager as this is required for a restore. I'm using Tailscale SSH for the transport rather than exposing SSH to the internet. If using regular SSH/SFTP, configure key-based authentication instead.
 
 I use the following script to automate backups: 
 
@@ -163,7 +161,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now restic-backup.timer
 ```
 
-As the client in my case is a laptop, this is unlikely to ever fire at 2AM but `Persistent=true` makes sure it'll try on boot when it misses that call, which is why I take extra care to check that the network is and that the server is reachable. You can also remove the explicit `HOME` variable in the script, add a `User` entry to the systemd service and change the permissions of the password file accordingly if you don't want to run the service as root. 
+As the client in my case is a laptop, this is unlikely to ever fire at 2AM but `Persistent=true` makes sure it'll try on boot when it misses that call, which is why I take extra care to check that the network is up and that the server is reachable. You can also remove the explicit `HOME` variable in the script, add a `User` entry to the systemd service and change the permissions of the password file accordingly if you don't want to run the service as root. 
 
 Before you trust it, test a restore:
 
