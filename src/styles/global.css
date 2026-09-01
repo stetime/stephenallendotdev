@@ -1,6 +1,6 @@
 :root {
   --background: rgb(248, 247, 255);
-  --accent: rgb(134, 255, 78);
+  --accent: rgb(224, 106, 0);
   --text-color: rgb(51, 51, 51);
 }
 
@@ -49,7 +49,10 @@ header h1 {
 
 header a {
   line-height: 1;
+  text-decoration: none;
 }
+
+
 
 header ul {
   display: flex;
@@ -88,6 +91,10 @@ a,
   color: var(--text-color);
 }
 
+a:hover {
+  color: var(--accent);
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--background);
@@ -109,7 +116,7 @@ svg {
 }
 
 .prose {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -122,6 +129,7 @@ svg {
   max-width: 100%;
   height: auto;
   cursor: zoom-in;
+  box-shadow: 0 1.25rem 3.5rem #00000012;
 }
 
 .postlist {
@@ -158,6 +166,10 @@ h6 {
   overflow-wrap: break-word;
 }
 
+.prose::selection {
+  background-color: var(--accent)
+}
+
 .prose h1,
 .prose h2,
 .prose h3,
@@ -170,6 +182,7 @@ h6 {
 
 .prose h1 {
   font-size: 1.875rem;
+  margin: 0;
 }
 
 .prose h2 {

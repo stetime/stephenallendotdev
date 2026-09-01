@@ -14,6 +14,14 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
+<style>
+  h2 + .date {
+    margin-top: 0;
+  }
+  h2 {
+    margin-bottom: 0;
+  }
+</style>
 <Layout
   title={`${post.data.title} - stephenallen.dev`}
   description={`${post.data.excerpt}`}

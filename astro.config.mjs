@@ -4,7 +4,7 @@ export default defineConfig({
   site: "https://stephenallen.dev",
   markdown: {
     shikiConfig: {
-      theme: "vesper"
+      theme: "github-dark"
     }
   },
   fonts: [
