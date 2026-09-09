@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { SITE_TITLE } from "../../consts";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -23,7 +24,7 @@ const { Content } = await render(post);
   }
 </style>
 <Layout
-  title={`${post.data.title} - stephenallen.dev`}
+  title={`${post.data.title} - ${SITE_TITLE}`}
   description={`${post.data.excerpt}`}
 >
   <article class="prose">

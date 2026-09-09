@@ -1,7 +1,9 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config'
+import { SITE_URL } from './src/consts'
+
 export default defineConfig({
-  site: "https://stephenallen.dev",
+  site: SITE_URL,
   markdown: {
     shikiConfig: {
       theme: "github-dark"
@@ -22,6 +24,7 @@ export default defineConfig({
       cssVariable: "--font-mono",
       provider: fontProviders.fontsource(),
       subsets: ["latin"],
+      formats: ["woff2", "woff"],
       fallbacks: ["ui-monospace", "monospace"]
     }
   ],

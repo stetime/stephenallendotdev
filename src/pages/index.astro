@@ -1,13 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const posts = await getCollection("posts");
 const sorted = posts.sort((a, b) => (b.data.pubDate > a.data.pubDate ? 1 : -1));
 ---
 
-<Layout title={Astro.site} description="Stephen Allen">
-  <div class="prose">
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <div class="posts">
     <h2>2026</h2>
     <ul class="postlist">
       {
