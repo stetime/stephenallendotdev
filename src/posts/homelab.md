@@ -1,5 +1,5 @@
 ---
-title: "Home Labbin'"
+title: "home labbin'"
 pubDate: "2026-01-01"
 excerpt: "Way before this stuff was codified as 'home labbing' I always had some kind of repurposed old gaming PC shoved in a cupboard running a flavour of Linux for _mission critical infra_ like streaming films off a samba share and running a terminal IRC client."
 ---

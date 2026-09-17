@@ -1,5 +1,5 @@
 ---
-title: "Type-safe .env files"
+title: "type-safe .env files"
 pubDate: "2026-02-21"
 excerpt: "While there are dedicated packages like t3-env for type safe environment variables I've been quite happy using this pattern with Zod"
 ---

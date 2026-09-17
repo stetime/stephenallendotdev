@@ -1,5 +1,5 @@
 ---
-title: "Home backups with Restic"
+title: "home backups with restic"
 pubDate: "2026-07-08"
 excerpt: "Enter restic, a cross-platform tool that makes encrypted deduplicated backups."
 ---
