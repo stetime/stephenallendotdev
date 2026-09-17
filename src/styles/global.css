@@ -106,11 +106,14 @@ header ul a {
   margin: 0 0 1rem;
   padding: 1rem;
   overflow-x: auto;
-  background: var(--bg-alt);
   border-radius: 6px;
   line-height: 1.5;
   scrollbar-width: thin;
   scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+.prose pre.astro-code {
+  background-color: var(--bg-alt) !important;
 }
 
 .prose pre code {
@@ -119,6 +122,17 @@ header ul a {
   background: transparent;
   border-radius: 0;
   font-size: 0.85em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+  }
+
+  .astro-code span {
+    background-color: transparent !important;
+  }
 }
 
 a {

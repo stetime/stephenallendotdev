@@ -1,11 +1,24 @@
 // @ts-check
+import { readFileSync } from 'node:fs'
 import { defineConfig, fontProviders } from 'astro/config'
 import { SITE_URL } from './src/consts'
+
+const modusOperandiTinted = JSON.parse(
+  readFileSync(new URL('./src/themes/modus-operandi-tinted.json', import.meta.url), 'utf8')
+)
+const modusVivendiTinted = JSON.parse(
+  readFileSync(new URL('./src/themes/modus-vivendi-tinted.json', import.meta.url), 'utf8')
+)
 
 export default defineConfig({
   site: SITE_URL,
   markdown: {
-    syntaxHighlight: false
+    shikiConfig: {
+      themes: {
+        light: modusOperandiTinted,
+        dark: modusVivendiTinted
+      }
+    }
   },
   fonts: [
     {
