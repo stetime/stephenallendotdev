@@ -5,19 +5,27 @@ import { SITE_URL } from './src/consts'
 export default defineConfig({
   site: SITE_URL,
   markdown: {
-    shikiConfig: {
-      theme: "github-dark"
-    }
+    syntaxHighlight: false
   },
   fonts: [
     {
       name: "Inter",
       cssVariable: "--font-sans",
       provider: fontProviders.fontsource(),
-      weights: [400, 600],
+      weights: [400, 500, 600, 700],
       styles: ["normal"],
       formats: ["woff2", "woff"],
       fallbacks: ["ui-sans-serif", "sans-serif"]
+    },
+    {
+      name: "DM Serif Display",
+      cssVariable: "--font-heading",
+      provider: fontProviders.fontsource(),
+      weights: [400],
+      styles: ["normal"],
+      subsets: ["latin"],
+      formats: ["woff2", "woff"],
+      fallbacks: ["Georgia", "serif"]
     },
     {
       name: "JetBrains Mono",

@@ -8,17 +8,18 @@ const sorted = posts.sort((a, b) => (b.data.pubDate > a.data.pubDate ? 1 : -1));
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <div class="posts">
-    <h2>2026</h2>
-    <ul class="postlist">
-      {
-        sorted.map((post) => (
-          <li class="postlistentry">
-            <a href={`/posts/${post.id}`}>{post.data.title}</a>{" "}
-            <span class="date">{post.data.pubDate.toLocaleDateString()}</span>
-          </li>
-        ))
-      }
-    </ul>
+  <h1 class="page-title">Blog</h1>
+  <div class="post-list">
+    {
+      sorted.map((post) => (
+        <a class="post-item" href={`/posts/${post.id}`}>
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString()}
+          </time>
+          <h3>{post.data.title}</h3>
+          <p>{post.data.excerpt}</p>
+        </a>
+      ))
+    }
   </div>
 </Layout>
