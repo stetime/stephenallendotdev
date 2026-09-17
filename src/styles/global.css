@@ -1,7 +1,16 @@
 :root {
+  color-scheme: light dark;
   --background: rgb(255, 254, 251);
   --accent: rgb(224, 106, 0);
   --text-color: rgb(51, 51, 51);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(27, 28, 25);
+    --accent: rgb(224, 106, 0);
+    --text-color: rgb(180, 177, 168);
+  }
 }
 
 *,
