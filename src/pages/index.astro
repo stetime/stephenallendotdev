@@ -1,25 +1,22 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-
-const posts = await getCollection("posts");
-const sorted = posts.sort((a, b) => (b.data.pubDate > a.data.pubDate ? 1 : -1));
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <h1 class="page-title">Blog</h1>
-  <div class="post-list">
-    {
-      sorted.map((post) => (
-        <a class="post-item" href={`/posts/${post.id}`}>
-          <time datetime={post.data.pubDate.toISOString()}>
-            {post.data.pubDate.toLocaleDateString()}
-          </time>
-          <h3>{post.data.title}</h3>
-          <p>{post.data.excerpt}</p>
-        </a>
-      ))
-    }
+  <div class="prose">
+    <h1>About</h1>
+    <hr class="title-rule" />
+    <p>
+      Web developer & sysadmin from Manchester, UK. 
+    </p>
+    <p>
+      I find the online discourse around LLMs and the culture wars utterly disinteresting, so
+      look literally anywhere else on the internet for that kind of content.
+    </p>
+    <p>
+      This website was built with <a href="https://www.astro.build">Astro</a>.
+    </p>
+    <hr class="text-rule" />
   </div>
 </Layout>

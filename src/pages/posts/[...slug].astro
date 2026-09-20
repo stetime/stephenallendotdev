@@ -21,7 +21,7 @@ const { Content } = await render(post);
 >
   <article class="prose">
     <h1>{post.data.title}</h1>
-    <span class="date">{post.data.pubDate.toLocaleDateString()}</span>
+    <span class="date">{post.data.pubDate.toLocaleDateString()}</span>  
     <Content />
   </article>
 </Layout>
