@@ -9,6 +9,17 @@ const url = new URL(Astro.url, Astro.site);
 <!doctype html>
 <html lang="en">
   <head>
+    <script is:inline>
+      (function () {
+        var stored = localStorage.getItem("theme");
+        var theme =
+          stored ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <Font cssVariable="--font-mono" preload />
     <Font cssVariable="--font-sans" preload />
     <Font cssVariable="--font-heading" preload />
@@ -55,5 +66,16 @@ const url = new URL(Astro.url, Astro.site);
     <div class="container">
       <slot />
     </div>
+    <script>
+      const toggle = document.getElementById("theme-toggle");
+      toggle?.addEventListener("click", () => {
+        const next =
+          document.documentElement.getAttribute("data-theme") === "dark"
+            ? "light"
+            : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+      });
+    </script>
   </body>
 </html>

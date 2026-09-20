@@ -12,6 +12,9 @@ const modusVivendiTinted = JSON.parse(
 
 export default defineConfig({
   site: SITE_URL,
+  redirects: {
+    '/about': '/'
+  },
   markdown: {
     shikiConfig: {
       themes: {
