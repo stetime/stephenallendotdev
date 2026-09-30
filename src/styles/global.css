@@ -148,7 +148,7 @@ header ul a {
 
 .site-footer {
   max-width: var(--max-width);
-  margin: 1.5rem auto;
+  margin: 2rem auto;
   padding: 0 2rem;
 }
 
@@ -364,7 +364,7 @@ svg {
 }
 
 .prose hr.text-rule {
-  margin: 1.25rem 0 2rem;
+  margin: 1.25rem 0 0;
 }
 
 p,

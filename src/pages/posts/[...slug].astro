@@ -23,6 +23,7 @@ const { Content } = await render(post);
     <h1>{post.data.title}</h1>
     <span class="date">{post.data.pubDate.toLocaleDateString()}</span>  
     <Content />
+    <hr class="text-rule" />
   </article>
 </Layout>
 <script>
