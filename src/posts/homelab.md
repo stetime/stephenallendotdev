@@ -1,7 +1,7 @@
 ---
 title: "home labbin'"
 pubDate: "2026-01-01"
-excerpt: "Way before this stuff was codified as 'home labbing' I always had some kind of repurposed old gaming PC shoved in a cupboard running a flavour of Linux for _mission critical infra_ like streaming films off a samba share and running a terminal IRC client."
+excerpt: "on the (current) design of my homelab"
 ---
 
 Way before this stuff was codified as "home labbing" I always had some kind of repurposed old gaming PC shoved in a cupboard running a flavour of Linux for _mission critical infra_ like streaming films off a samba share and running a terminal IRC client. Things haven't changed too much: I currently have the old i5 6500K & GTX1060 I played _Witcher 3_ on stashed under the stairs with a Debian install, only these days the software stack is much more impressive:

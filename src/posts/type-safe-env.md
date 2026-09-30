@@ -1,7 +1,7 @@
 ---
 title: "type-safe .env files"
 pubDate: "2026-02-21"
-excerpt: "While there are dedicated packages like t3-env for type safe environment variables I've been quite happy using this pattern with Zod"
+excerpt: "zod schema patterns for type-safe .env files in ts"
 ---
 
 While TS has tons of libraries like [t3-env](https://github.com/t3-oss/t3-env) for type safe environment variables I've been quite happy using this pattern with [Zod](https://zod.dev/):
@@ -11,16 +11,8 @@ While TS has tons of libraries like [t3-env](https://github.com/t3-oss/t3-env) f
 ```typescript
 import { ZodError, z } from "zod";
 const EnvSchema = z.object({
-  NODE_ENV: z.string().default("development"),
-  BETTER_AUTH_SECRET: z.string(),
-  BETTER_AUTH_URL: z.url(),
-  DB_HOST: z.string(),
-  DB_USER: z.string(),
-  DB_PASSWORD: z.string(),
-  DB_NAME: z.string(),
-  DB_PORT: z.coerce.number(),
-  DB_MAX_CONNECTIONS: z.number().default(10),
   DATABASE_URL: z.string(),
+  DB_MAX_CONNECTIONS: z.number().default(10),
 });
 
 export type EnvSchema = z.infer<typeof EnvSchema>;
